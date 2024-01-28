@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/barbearia_nav_global_key.dart';
-import 'package:dw_barbearia/src/core/core/local_storage_keys.dart';
+import 'package:dw_barbearia/src/core/barbearia_nav_global_key.dart';
+import 'package:dw_barbearia/src/core/local_storage_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

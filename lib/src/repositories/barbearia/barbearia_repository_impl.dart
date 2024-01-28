@@ -1,10 +1,8 @@
-// ignore_for_file: unused_field
-
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/nil.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/fp/nil.dart';
 import 'package:dw_barbearia/src/model/barbearia_model.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:dw_barbearia/src/repositories/barbearia/barbearia_repository.dart';
@@ -54,7 +52,8 @@ class BarbeariaRepositoryImpl implements BarbeariaRepository {
       return Success(nil);
     } on DioException catch (e, s) {
       log('Erro ao registrar barbearia', error: e, stackTrace: s);
-      return Failure(RepositoryExecption(message: 'Erro ao registrar barbearia'));
+      return Failure(
+          RepositoryExecption(message: 'Erro ao registrar barbearia'));
     }
   }
 }

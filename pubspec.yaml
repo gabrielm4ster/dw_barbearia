@@ -47,6 +47,8 @@ dependencies:
   table_calendar: ^3.0.9
   syncfusion_flutter_calendar: ^24.1.46
   localization: ^2.1.1
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
