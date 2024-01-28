@@ -1,3 +1,4 @@
+import 'package:asyncstate/asyncstate.dart';
 import 'package:dw_barbearia/src/core/helpers/form_helper.dart';
 import 'package:dw_barbearia/src/core/helpers/messages.dart';
 import 'package:dw_barbearia/src/features/auth/register/user/user_register_vm.dart';
@@ -35,7 +36,8 @@ class _UserRegisterPageState extends ConsumerState<UserRegisterPage> {
         case UserRegisterStateStatus.initial:
           break;
         case UserRegisterStateStatus.success:
-          Navigator.pushNamed(context, '/auth/register/barbearia');
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              '/auth/register/barbearia', (_) => false);
         case UserRegisterStateStatus.error:
           context.showError('Error ao registrar usuário adminstrador');
       }
@@ -107,10 +109,12 @@ class _UserRegisterPageState extends ConsumerState<UserRegisterPage> {
                     case null || false:
                       context.showError('Formulário invalido');
                     case true:
-                      userRegisterVM.register(
-                          name: nameEC.text,
-                          email: emailEC.text,
-                          password: passwordEC.text);
+                      userRegisterVM
+                          .register(
+                              name: nameEC.text,
+                              email: emailEC.text,
+                              password: passwordEC.text)
+                          .asyncLoader();
                   }
                 },
                 child: const Text('CRIAR CONTA'),
