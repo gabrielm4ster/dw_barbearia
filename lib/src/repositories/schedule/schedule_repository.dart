@@ -1,5 +1,5 @@
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/nil.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/fp/nil.dart';
 import 'package:dw_barbearia/src/model/schedule_model.dart';
 import 'package:dw_barbearia/src/repositories/repository_exception.dart';
 

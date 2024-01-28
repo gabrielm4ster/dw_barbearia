@@ -1,5 +1,5 @@
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/messages.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
+import 'package:dw_barbearia/src/core/helpers/messages.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -51,31 +51,33 @@ class _ScheduleCalendarState extends State<ScheduleCalendar> {
       child: Column(
         children: [
           TableCalendar(
-              availableGestures: AvailableGestures.none,
-              headerStyle: const HeaderStyle(titleCentered: true),
-              focusedDay: DateTime.now(),
-              firstDay: DateTime.utc(2015, 01, 01),
-              lastDay: DateTime.now().add(const Duration(days: 365 * 10)),
-              calendarFormat: CalendarFormat.month,
-              locale: 'pt_BR',
-              availableCalendarFormats: const {CalendarFormat.month: 'Mês'},
-              enabledDayPredicate: (day) {
-                return weekDaysEnabled.contains(day.weekday);
-              },
-              selectedDayPredicate: (day) {
-                return isSameDay(selectedDay, day);
-              },
-              onDaySelected: (selectedDay, focusedDay) {
-                setState(() {
-                  this.selectedDay = selectedDay;
-                });
-              },
-              calendarStyle: CalendarStyle(
-                  selectedDecoration: const BoxDecoration(
-                      color: ColorConstants.colorBrown, shape: BoxShape.circle),
-                  todayDecoration: BoxDecoration(
-                      color: ColorConstants.colorBrown.withOpacity(0.4),
-                      shape: BoxShape.circle))),
+            availableGestures: AvailableGestures.none,
+            headerStyle: const HeaderStyle(titleCentered: true),
+            focusedDay: DateTime.now(),
+            firstDay: DateTime.utc(2015, 01, 01),
+            lastDay: DateTime.now().add(const Duration(days: 365 * 10)),
+            calendarFormat: CalendarFormat.month,
+            locale: 'pt_BR',
+            availableCalendarFormats: const {CalendarFormat.month: 'Mês'},
+            enabledDayPredicate: (day) {
+              return weekDaysEnabled.contains(day.weekday);
+            },
+            selectedDayPredicate: (day) {
+              return isSameDay(selectedDay, day);
+            },
+            onDaySelected: (selectedDay, focusedDay) {
+              setState(() {
+                this.selectedDay = selectedDay;
+              });
+            },
+            calendarStyle: CalendarStyle(
+              selectedDecoration: const BoxDecoration(
+                  color: ColorConstants.colorBrown, shape: BoxShape.circle),
+              todayDecoration: BoxDecoration(
+                  color: ColorConstants.colorBrown.withOpacity(0.4),
+                  shape: BoxShape.circle),
+            ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

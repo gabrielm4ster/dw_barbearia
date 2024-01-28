@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-sealed class FontsConstants{
+sealed class FontsConstants {
   static const fontFamily = 'poppins';
 }
 
@@ -18,4 +17,3 @@ sealed class ColorConstants {
   static const colorGreyLight = Color(0xFFB07B01);
   static const colorRed = Color(0xFFEB1212);
 }
-

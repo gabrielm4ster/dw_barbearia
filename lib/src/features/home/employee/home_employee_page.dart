@@ -1,11 +1,11 @@
 import 'dart:developer';
 
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/widgets/avatar_widgets.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/widgets/barbearia_loader.dart';
-import 'package:dw_barbearia/src/core/core/providers/application_providers.dart';
-import 'package:dw_barbearia/src/features/splash/home/adm/widgets/home_header.dart';
-import 'package:dw_barbearia/src/features/splash/home/employee/home_employee_provider.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
+import 'package:dw_barbearia/src/core/providers/application_providers.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/avatar_widgets.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/barbearia_loader.dart';
+import 'package:dw_barbearia/src/features/home/adm/widgets/home_header.dart';
+import 'package:dw_barbearia/src/features/home/employee/home_employee_provider.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

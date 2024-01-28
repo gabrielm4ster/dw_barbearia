@@ -1,5 +1,5 @@
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/providers/application_providers.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/providers/application_providers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'home_employee_provider.g.dart';
@@ -20,4 +20,3 @@ Future<int> getTotalSchedulesToday(
     Failure(:final exception) => throw exception,
   };
 }
-

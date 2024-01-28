@@ -1,12 +1,12 @@
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/barbearia_icons.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/form_helper.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/messages.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/widgets/avatar_widgets.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/widgets/hours_panel.dart';
-import 'package:dw_barbearia/src/features/employee/register/schedule/schedule_state.dart';
-import 'package:dw_barbearia/src/features/employee/register/schedule/schedule_vm.dart';
-import 'package:dw_barbearia/src/features/employee/register/schedule/widgets/schedule_calendar.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
+import 'package:dw_barbearia/src/core/helpers/form_helper.dart';
+import 'package:dw_barbearia/src/core/helpers/messages.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/avatar_widgets.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/barbearia_icons.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/hours_panel.dart';
+import 'package:dw_barbearia/src/features/employee/schedule/schedule_state.dart';
+import 'package:dw_barbearia/src/features/employee/schedule/schedule_vm.dart';
+import 'package:dw_barbearia/src/features/employee/schedule/widgets/schedule_calendar.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:flutter/material.dart';
 

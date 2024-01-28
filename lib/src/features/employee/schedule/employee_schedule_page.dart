@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/widgets/barbearia_loader.dart';
-import 'package:dw_barbearia/src/features/employee/register/schedule/appointment_ds.dart';
-import 'package:dw_barbearia/src/features/employee/register/schedule/employee_schedule_vm.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/barbearia_loader.dart';
+import 'package:dw_barbearia/src/features/employee/schedule/appointment_ds.dart';
+import 'package:dw_barbearia/src/features/employee/schedule/employee_schedule_vm.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -53,89 +53,86 @@ class _EmployeeSchedulePageState extends ConsumerState<EmployeeSchedulePage> {
           ),
           const SizedBox(height: 44),
           scheduleAsync.when(
-              loading: () => const BarbeariaLoader(),
-              error: (e, s) {
-                const errorMessage = 'Erro ao carregar agendamento';
-                log(errorMessage, error: e, stackTrace: s);
-                return const Center(
-                  child: Text(errorMessage),
-                );
-              },
-              data: (schedules) => Expanded(
-                    child: SfCalendar(
-                      allowViewNavigation: true,
-                      view: CalendarView.day,
-                      showNavigationArrow: true,
-                      todayHighlightColor: ColorConstants.colorBrown,
-                      showDatePickerButton: true,
-                      showTodayButton: true,
-                      dataSource: AppointmentDataSource(
-                          schedules: schedules), //schedules: schedules),
-                      // appointmentBuilder:
-                      //     (context, calendarAppointmentDetails) {
-                      //   return Container(
-                      //     decoration: BoxDecoration(
-                      //       color: ColorConstants.colorBrown,
-                      //       shape: BoxShape.rectangle,
-                      //       borderRadius: BorderRadius.circular(5),
-                      //     ),
-                      //     child: Center(
-                      //       child: Text(
-                      //         calendarAppointmentDetails
-                      //             .appointments.first.subject,
-                      //         style: const TextStyle(
-                      //           color: Colors.white,
-                      //           fontSize: 12,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   );
-                      // },
-                      onViewChanged: (viewChangedDetails) {
-                        if (ignoreFirstLoad) {
-                          ignoreFirstLoad = false;
-                          return;
-                        }
-                        final employeeSchedule = ref.read(
-                          employeeScheduleVMProvider(userId, dateSelected)
-                              .notifier,
-                        );
-                        employeeSchedule.changeDate(
-                          userId,
-                          viewChangedDetails.visibleDates.first,
-                        );
-                      },
-                      onTap: (calendarTapDetails) {
-                        if (calendarTapDetails.appointments?.isNotEmpty ??
-                            false) {
-                          showModalBottomSheet(
-                            context: context,
-                            builder: (context) {
-                              final dateFormat =
-                                  DateFormat('dd//MM/yyyy HH:mm');
-                              return SizedBox(
-                                height: 200,
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        // ignore: avoid_dynamic_calls
-                                        'Cliente: ${calendarTapDetails.appointments!.first.subject}',
-                                      ),
-                                      Text(
-                                        'Horário: ${dateFormat.format(calendarTapDetails.date ?? DateTime.now())}',
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              );
-                            },
-                          );
-                        }
-                      },
+            loading: () => const BarbeariaLoader(),
+            error: (e, s) {
+              const errorMessage = 'Erro ao carregar agendamento';
+              log(errorMessage, error: e, stackTrace: s);
+              return const Center(
+                child: Text(errorMessage),
+              );
+            },
+            data: (schedules) => Expanded(
+              child: SfCalendar(
+                allowViewNavigation: true,
+                view: CalendarView.day,
+                showNavigationArrow: true,
+                todayHighlightColor: ColorConstants.colorBrown,
+                showDatePickerButton: true,
+                showTodayButton: true,
+                dataSource: AppointmentDataSource(
+                  schedules: schedules,
+                ), //schedules: schedules),
+                appointmentBuilder: (context, calendarAppointmentDetails) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: ColorConstants.colorBrown,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(5),
                     ),
-                  ))
+                    child: Center(
+                      child: Text(
+                        calendarAppointmentDetails.appointments.first.subject,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                onViewChanged: (viewChangedDetails) {
+                  if (ignoreFirstLoad) {
+                    ignoreFirstLoad = false;
+                    return;
+                  }
+                  final employeeSchedule = ref.read(
+                    employeeScheduleVMProvider(userId, dateSelected).notifier,
+                  );
+                  employeeSchedule.changeDate(
+                    userId,
+                    viewChangedDetails.visibleDates.first,
+                  );
+                },
+                onTap: (calendarTapDetails) {
+                  if (calendarTapDetails.appointments?.isNotEmpty ?? false) {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        final dateFormat = DateFormat('dd//MM/yyyy HH:mm');
+                        return SizedBox(
+                          height: 200,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  // ignore: avoid_dynamic_calls
+                                  'Cliente: ${calendarTapDetails.appointments!.first.subject}',
+                                ),
+                                Text(
+                                  'Horário: ${dateFormat.format(calendarTapDetails.date ?? DateTime.now())}',
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  }
+                },
+              ),
+            ),
+          )
         ],
       ),
     );

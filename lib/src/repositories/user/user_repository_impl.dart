@@ -1,17 +1,14 @@
-// ignore_for_file: unused_field, unused_local_variable
-
-import 'dart:developer';
 import 'dart:io';
+import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/exceptions/auth_exeptions.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/nil.dart';
+import 'package:dw_barbearia/src/core/exceptions/auth_exeptions.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/fp/nil.dart';
 import 'package:dw_barbearia/src/core/restClient/rest_client.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:dw_barbearia/src/repositories/repository_exception.dart';
-
-import './user_repository.dart';
+import 'package:dw_barbearia/src/repositories/user/user_repository.dart';
 
 class UserRepositoryImpl implements UserRepository {
   final RestClient _restClient;
@@ -87,7 +84,7 @@ class UserRepositoryImpl implements UserRepository {
       int barbeariaId) async {
     try {
       final Response(:List data) = await _restClient.auth
-          .get('/users', queryParameters: {'barbearia_id': barbeariaId});
+          .get('/users', queryParameters: {'barbershop_id': barbeariaId});
 
       final employees = data.map((e) => UserModelADM.fromMap(e)).toList();
       return Success(employees);
@@ -140,15 +137,14 @@ class UserRepositoryImpl implements UserRepository {
         String name,
         String password,
         List<String> workDays,
-        List<int> workHours
+        List<int> workHours,
       }) userModel) async {
     try {
-
       await _restClient.auth.post('/users/', data: {
         'name': userModel.name,
         'email': userModel.email,
         'password': userModel.password,
-        'barbearia_id': userModel.barbeariaId,
+        'barbershop_id': userModel.barbeariaId,
         'profile': 'EMPLOYEE',
         'work_days': userModel.workDays,
         'work_hours': userModel.workHours,

@@ -1,8 +1,6 @@
-// ignore_for_file: unused_local_variable
-
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/form_helper.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/messages.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/register/user/user_register_vm.dart';
+import 'package:dw_barbearia/src/core/helpers/form_helper.dart';
+import 'package:dw_barbearia/src/core/helpers/messages.dart';
+import 'package:dw_barbearia/src/features/auth/register/user/user_register_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:validatorless/validatorless.dart';

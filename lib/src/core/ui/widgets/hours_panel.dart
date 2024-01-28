@@ -1,6 +1,5 @@
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
 import 'package:flutter/material.dart';
-
 
 class HoursPanel extends StatefulWidget {
   final List<int>? enabledTimes;
@@ -61,7 +60,7 @@ class _HoursPanelState extends State<HoursPanel> {
                 onPressed: (timeSelected) {
                   setState(() {
                     if (singleSelection) {
-                      if(lastSelection == timeSelected) {
+                      if (lastSelection == timeSelected) {
                         lastSelection = null;
                       } else {
                         lastSelection = timeSelected;
@@ -114,9 +113,9 @@ class _TimeButtonState extends State<TimeButton> {
       :singleSelection,
       :timeSelected
     ) = widget;
-    
+
     if (singleSelection) {
-      if(timeSelected != null && timeSelected == value) {
+      if (timeSelected != null && timeSelected == value) {
         selected = true;
       } else {
         selected = false;

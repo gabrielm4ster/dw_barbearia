@@ -1,8 +1,8 @@
-import 'package:dw_barbearia/src/core/core/core/ui/exceptions/service_exption.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/nil.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/register/user/user_repository.dart';
-import 'package:dw_barbearia/src/services/user_login_service.dart';
+import 'package:dw_barbearia/src/core/exceptions/service_exption.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/fp/nil.dart';
+import 'package:dw_barbearia/src/repositories/user/user_repository.dart';
+import 'package:dw_barbearia/src/services/user_login/user_login_service.dart';
 import 'user_register_adm_service.dart';
 
 class UserRegisterAdmServiceImpl implements UserRegisterAdmService {

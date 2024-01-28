@@ -1,6 +1,6 @@
-import 'package:dw_barbearia/src/core/core/core/ui/exceptions/auth_exeptions.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/nil.dart';
+import 'package:dw_barbearia/src/core/exceptions/auth_exeptions.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/fp/nil.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:dw_barbearia/src/repositories/repository_exception.dart';
 
@@ -30,5 +30,5 @@ abstract interface class UserRepository {
         String password,
         List<String> workDays,
         List<int> workHours,
-      }) userModel);    
+      }) userModel);
 }

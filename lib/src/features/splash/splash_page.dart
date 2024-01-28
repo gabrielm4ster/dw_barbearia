@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/messages.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/login_page.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
+import 'package:dw_barbearia/src/core/helpers/messages.dart';
+import 'package:dw_barbearia/src/features/auth/login/login_page.dart';
 import 'package:dw_barbearia/src/features/splash/splash_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -73,39 +73,41 @@ class _SplashPageState extends ConsumerState<SplashPage> {
         ),
         child: Center(
           child: AnimatedOpacity(
+            duration: const Duration(seconds: 3),
+            curve: Curves.easeIn,
+            opacity: _animationOpacityLogo,
+            onEnd: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                PageRouteBuilder(
+                  settings: const RouteSettings(name: '/auth/login'),
+                  pageBuilder: (
+                    context,
+                    animation,
+                    secondaryAnimation,
+                  ) {
+                    return const LoginPage();
+                  },
+                  transitionsBuilder: (_, animation, __, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+                ),
+                (router) => false,
+              );
+            },
+            child: AnimatedContainer(
               duration: const Duration(seconds: 3),
-              curve: Curves.easeIn,
-              opacity: _animationOpacityLogo,
-              onEnd: () {
-                Navigator.of(context).pushAndRemoveUntil(
-                  PageRouteBuilder(
-                    settings: const RouteSettings(name: '/auth/login'),
-                    pageBuilder: (
-                      context,
-                      animation,
-                      secondaryAnimation,
-                    ) {
-                      return const LoginPage();
-                    },
-                    transitionsBuilder: (_, animation, __, child) {
-                      return FadeTransition(
-                        opacity: animation,
-                        child: child,
-                      );
-                    },
-                  ),
-                  (router) => false,
-                );
-              },
-              child: AnimatedContainer(
-                  duration: const Duration(seconds: 3),
-                  width: _logoAnimetionWidth,
-                  height: _logoAnimetionHeight,
-                  curve: Curves.linearToEaseOut,
-                  child: Image.asset(
-                    ImageConstants.imageLogo,
-                    fit: BoxFit.cover,
-                  ))),
+              width: _logoAnimetionWidth,
+              height: _logoAnimetionHeight,
+              curve: Curves.linearToEaseOut,
+              child: Image.asset(
+                ImageConstants.imageLogo,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
         ),
       ),
     );

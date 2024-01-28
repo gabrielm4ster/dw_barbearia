@@ -1,6 +1,6 @@
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/providers/application_providers.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/register/user/barbearia/barbearia_register_state.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/providers/application_providers.dart';
+import 'package:dw_barbearia/src/features/auth/register/barbearia/barbearia_register_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'barbearia_register_vm.g.dart';

@@ -1,9 +1,9 @@
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/form_helper.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/messages.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/widgets/hours_panel.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/widgets/weekdays_panel.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/register/user/barbearia/barbearia_register_state.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/register/user/barbearia/barbearia_register_vm.dart';
+import 'package:dw_barbearia/src/core/helpers/form_helper.dart';
+import 'package:dw_barbearia/src/core/helpers/messages.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/hours_panel.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/weekdays_panel.dart';
+import 'package:dw_barbearia/src/features/auth/register/barbearia/barbearia_register_state.dart';
+import 'package:dw_barbearia/src/features/auth/register/barbearia/barbearia_register_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:validatorless/validatorless.dart';

@@ -1,4 +1,4 @@
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 

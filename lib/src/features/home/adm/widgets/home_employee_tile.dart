@@ -1,5 +1,5 @@
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/barbearia_icons.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/barbearia_icons.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:flutter/material.dart';
 
@@ -58,7 +58,8 @@ class HomeEmployeeTile extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(horizontal: 12)),
                       onPressed: () {
-                        Navigator.pushNamed(context,'/schedule', arguments: employee);
+                        Navigator.pushNamed(context, '/schedule',
+                            arguments: employee);
                       },
                       child: const Text('AGENDAR'),
                     ),

@@ -1,13 +1,13 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:asyncstate/asyncstate.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/nil.dart';
-import 'package:dw_barbearia/src/core/core/providers/application_providers.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/fp/nil.dart';
+import 'package:dw_barbearia/src/core/providers/application_providers.dart';
 import 'package:dw_barbearia/src/features/employee/register/employee_register_state.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/register/user/user_repository.dart';
 import 'package:dw_barbearia/src/model/barbearia_model.dart';
 import 'package:dw_barbearia/src/repositories/repository_exception.dart';
+import 'package:dw_barbearia/src/repositories/user/user_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'employee_register_vm.g.dart';

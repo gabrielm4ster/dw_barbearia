@@ -1,5 +1,5 @@
-import 'package:dw_barbearia/src/core/core/local_storage_keys.dart';
-import 'package:dw_barbearia/src/core/core/providers/application_providers.dart';
+import 'package:dw_barbearia/src/core/local_storage_keys.dart';
+import 'package:dw_barbearia/src/core/providers/application_providers.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -1,7 +1,7 @@
 import 'package:asyncstate/asyncstate.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
-import 'package:dw_barbearia/src/core/core/providers/application_providers.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/register/user/user_register_provider.dart';
+import 'package:dw_barbearia/src/core/fp/either.dart';
+import 'package:dw_barbearia/src/core/providers/application_providers.dart';
+import 'package:dw_barbearia/src/features/auth/register/user/user_register_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'user_register_vm.g.dart';

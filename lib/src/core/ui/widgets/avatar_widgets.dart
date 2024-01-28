@@ -1,9 +1,8 @@
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/barbearia_icons.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
+import 'package:dw_barbearia/src/core/ui/widgets/barbearia_icons.dart';
 import 'package:flutter/material.dart';
 
 class AvatarWidget extends StatelessWidget {
-
   final bool hideUploadButton;
 
   const AvatarWidget({super.key}) : hideUploadButton = false;

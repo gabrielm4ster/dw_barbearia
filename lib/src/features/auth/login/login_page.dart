@@ -1,12 +1,12 @@
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/constants.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/form_helper.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/helpers/messages.dart';
-import 'package:dw_barbearia/src/features/splash/auth/login/login_vm.dart';
+import 'package:dw_barbearia/src/core/constants.dart';
+import 'package:dw_barbearia/src/core/helpers/form_helper.dart';
+import 'package:dw_barbearia/src/core/helpers/messages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:validatorless/validatorless.dart';
 
 import 'login_state.dart';
+import 'login_vm.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
