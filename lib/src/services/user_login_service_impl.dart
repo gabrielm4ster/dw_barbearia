@@ -5,7 +5,7 @@ import 'package:dw_barbearia/src/core/core/core/ui/exceptions/service_exption.da
 import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
 import 'package:dw_barbearia/src/core/core/core/ui/fp/nil.dart';
 import 'package:dw_barbearia/src/core/core/local_storage_keys.dart';
-import 'package:dw_barbearia/src/freatures/splash/auth/login/register/user/user_repository.dart';
+import 'package:dw_barbearia/src/features/splash/auth/login/register/user/user_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'user_login_service.dart';

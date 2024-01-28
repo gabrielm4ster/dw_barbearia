@@ -2,15 +2,15 @@ import 'package:asyncstate/asyncstate.dart';
 import 'package:dw_barbearia/src/core/core/core/ui/barbearia_nav_global_key.dart';
 import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/barbearia_theme.dart';
 import 'package:dw_barbearia/src/core/core/core/ui/widgets/barbearia_loader.dart';
-import 'package:dw_barbearia/src/freatures/employee/register/employee_register_page.dart';
-import 'package:dw_barbearia/src/freatures/employee/register/schedule/employee_schedule_page.dart';
-import 'package:dw_barbearia/src/freatures/employee/register/schedule/schedule_page.dart';
-import 'package:dw_barbearia/src/freatures/splash/auth/login/login_page.dart';
-import 'package:dw_barbearia/src/freatures/splash/auth/login/register/user/barbearia/barbearia_register_page.dart';
-import 'package:dw_barbearia/src/freatures/splash/auth/login/register/user/user_register_page.dart';
-import 'package:dw_barbearia/src/freatures/splash/home/adm/home_adm_page.dart';
-import 'package:dw_barbearia/src/freatures/splash/home/employee/home_employee_page.dart';
-import 'package:dw_barbearia/src/freatures/splash/splash_page.dart';
+import 'package:dw_barbearia/src/features/employee/register/employee_register_page.dart';
+import 'package:dw_barbearia/src/features/employee/register/schedule/employee_schedule_page.dart';
+import 'package:dw_barbearia/src/features/employee/register/schedule/schedule_page.dart';
+import 'package:dw_barbearia/src/features/splash/auth/login/login_page.dart';
+import 'package:dw_barbearia/src/features/splash/auth/login/register/user/barbearia/barbearia_register_page.dart';
+import 'package:dw_barbearia/src/features/splash/auth/login/register/user/user_register_page.dart';
+import 'package:dw_barbearia/src/features/splash/home/adm/home_adm_page.dart';
+import 'package:dw_barbearia/src/features/splash/home/employee/home_employee_page.dart';
+import 'package:dw_barbearia/src/features/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
 class BarbeariaApp extends StatelessWidget {
@@ -40,8 +40,7 @@ class BarbeariaApp extends StatelessWidget {
           },
           locale: const Locale('pt', 'BR'),
           supportedLocales: const [Locale('pt', 'BR')],
-          localizationsDelegates: const [
-          ],
+          localizationsDelegates: const [],
         );
       },
     );

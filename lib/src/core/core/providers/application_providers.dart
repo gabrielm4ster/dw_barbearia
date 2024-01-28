@@ -5,8 +5,8 @@ import 'package:dw_barbearia/src/model/barbearia_model.dart';
 import 'package:dw_barbearia/src/model/user_model.dart';
 import 'package:dw_barbearia/src/repositories/barbearia/barbearia_repository.dart';
 import 'package:dw_barbearia/src/repositories/barbearia/barbearia_repository_impl.dart';
-import 'package:dw_barbearia/src/freatures/splash/auth/login/register/user/user_repositories_impl.dart';
-import 'package:dw_barbearia/src/freatures/splash/auth/login/register/user/user_repository.dart';
+import 'package:dw_barbearia/src/features/splash/auth/login/register/user/user_repositories_impl.dart';
+import 'package:dw_barbearia/src/features/splash/auth/login/register/user/user_repository.dart';
 import 'package:dw_barbearia/src/repositories/schedule/schedule_repository.dart';
 import 'package:dw_barbearia/src/repositories/schedule/schedule_repository_impl.dart';
 import 'package:dw_barbearia/src/services/user_login_service.dart';
@@ -14,7 +14,6 @@ import 'package:dw_barbearia/src/services/user_login_service_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 
 part 'application_providers.g.dart';
 
