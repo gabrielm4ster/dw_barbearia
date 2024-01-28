@@ -1,3 +1,4 @@
+import 'package:asyncstate/asyncstate.dart';
 import 'package:dw_barbearia/src/core/helpers/form_helper.dart';
 import 'package:dw_barbearia/src/core/helpers/messages.dart';
 import 'package:dw_barbearia/src/core/ui/widgets/hours_panel.dart';
@@ -100,10 +101,12 @@ class _BarbeariaRegisterPageState extends ConsumerState<BarbeariaRegisterPage> {
                     case null || false:
                       context.showError('Formulário invalido');
                     case true:
-                      barbeariaRegisterVM.register(
-                        name: nameEC.text,
-                        email: emailEC.text,
-                      );
+                      barbeariaRegisterVM
+                          .register(
+                            name: nameEC.text,
+                            email: emailEC.text,
+                          )
+                          .asyncLoader();
                   }
                 },
                 child: const Text('CADASTRAR ESTABELECIMENTO'),

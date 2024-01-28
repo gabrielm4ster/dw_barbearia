@@ -30,8 +30,7 @@ class UserRegisterVm extends _$UserRegisterVm {
       password: password,
     );
 
-    final registerResult =
-        await userRegisterAdmService.execute(userData).asyncLoader();
+    final registerResult = await userRegisterAdmService.execute(userData);
     switch (registerResult) {
       case Success():
         ref.invalidate(getMeProvider);

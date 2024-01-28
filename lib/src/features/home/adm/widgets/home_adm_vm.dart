@@ -30,7 +30,9 @@ class HomeAdmVm extends _$HomeAdmVm {
         employees.addAll(employeesData);
 
         return HomeAdmState(
-            status: HomeAdmStateStatus.loaded, employees: employees);
+          status: HomeAdmStateStatus.loaded,
+          employees: employees,
+        );
       case Failure():
         return HomeAdmState(status: HomeAdmStateStatus.loaded, employees: []);
     }

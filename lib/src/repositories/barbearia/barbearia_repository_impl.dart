@@ -21,13 +21,13 @@ class BarbeariaRepositoryImpl implements BarbeariaRepository {
     switch (userModel) {
       case UserModelADM():
         final Response(data: List(first: data)) = await _restClient.auth.get(
-          '/barbearia',
-          queryParameters: {'user_id': '#userAuthRef'},
+          '/barbershop',
+          queryParameters: {'user_id': "#userAuthRef"},
         );
         return Success(BarbeariaModel.fromMap(data));
       case UserModelEmployee():
         final Response(:data) =
-            await _restClient.auth.get('/barbearia/${userModel.barbeariaId}');
+            await _restClient.auth.get('/barbershop/${userModel.barbeariaId}');
         return Success(BarbeariaModel.fromMap(data));
     }
   }
@@ -41,7 +41,7 @@ class BarbeariaRepositoryImpl implements BarbeariaRepository {
         List<int> openingHours,
       }) data) async {
     try {
-      await _restClient.auth.post('/barbearia', data: {
+      await _restClient.auth.post('/barbershop', data: {
         'user_id': '#userAuthRef',
         'name': data.name,
         'email': data.email,
