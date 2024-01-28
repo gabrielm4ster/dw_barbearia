@@ -42,7 +42,7 @@ class ScheduleVm extends _$ScheduleVm {
       time: scheduleTime!,
     );
 
-    final scheduleResult = await scheduleRepository.sheduleClient(dto);
+    final scheduleResult = await scheduleRepository.scheduleClient(dto);
 
     switch (scheduleResult) {
       case Success():
