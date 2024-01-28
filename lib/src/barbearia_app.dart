@@ -1,7 +1,7 @@
 import 'package:asyncstate/asyncstate.dart';
 import 'package:dw_barbearia/src/core/core/core/ui/barbearia_nav_global_key.dart';
-import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/barbearia_loader.dart';
 import 'package:dw_barbearia/src/core/core/core/ui/core/ui/widgets/barbearia_theme.dart';
+import 'package:dw_barbearia/src/core/core/core/ui/widgets/barbearia_loader.dart';
 import 'package:dw_barbearia/src/freatures/employee/register/employee_register_page.dart';
 import 'package:dw_barbearia/src/freatures/employee/register/schedule/employee_schedule_page.dart';
 import 'package:dw_barbearia/src/freatures/employee/register/schedule/schedule_page.dart';
@@ -31,7 +31,7 @@ class BarbeariaApp extends StatelessWidget {
             '/': (_) => const SplashPage(),
             '/auth/login': (_) => const LoginPage(),
             '/auth/register/user': (_) => const UserRegisterPage(),
-            '/auth/register/barebershop': (_) => const BarbeariaRegisterPage(),
+            '/auth/register/barebearia': (_) => const BarbeariaRegisterPage(),
             '/home/adm': (_) => const HomeAdmPage(),
             '/home/employee': (_) => const HomeEmployeePage(),
             '/employee/register': (_) => const EmployeeRegisterPage(),
@@ -41,9 +41,6 @@ class BarbeariaApp extends StatelessWidget {
           locale: const Locale('pt', 'BR'),
           supportedLocales: const [Locale('pt', 'BR')],
           localizationsDelegates: const [
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
           ],
         );
       },

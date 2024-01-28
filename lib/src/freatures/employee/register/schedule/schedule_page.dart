@@ -61,7 +61,7 @@ class _SchedulePageState extends ConsumerState<SchedulePage> {
             break;
           case ScheduleStateStatus.success:
             context.showSuccess('Cliente agendado com sucesso');
-            context.pop();
+            Navigator.pop(context);
           case ScheduleStateStatus.error:
             context.showError('Erro ao registrar agendamento');
         }

@@ -2,7 +2,6 @@ import 'package:dw_barbearia/src/core/core/core/ui/exceptions/service_exption.da
 import 'package:dw_barbearia/src/core/core/core/ui/fp/either.dart';
 import 'package:dw_barbearia/src/core/core/core/ui/fp/nil.dart';
 
-
 abstract interface class UserRegisterAdmService {
   Future<Either<ServiceException, Nil>> execute(
       ({String name, String email, String password}) userData);
