@@ -18,17 +18,17 @@ class ScheduleRepositoryImpl implements ScheduleRepository {
   @override
   Future<Either<RepositoryExecption, Nil>> scheduleClient(
       ({
-        int barbeariad,
+        int barbeariaId,
         String clientName,
         DateTime date,
         int time,
-        int userId
+        int userId,
       }) scheduleData) async {
     try {
       await _restClient.auth.post(
         '/schedules',
         data: {
-          'barbearia_id': scheduleData.barbeariad,
+          'barbearia_id': scheduleData.barbeariaId,
           'user_id': scheduleData.userId,
           'client_name': scheduleData.clientName,
           'date': scheduleData.date.toIso8601String(),
@@ -64,18 +64,5 @@ class ScheduleRepositoryImpl implements ScheduleRepository {
       log('Json Invalido', error: e, stackTrace: s);
       return Failure(RepositoryExecption(message: 'Json Invalido'));
     }
-  }
-
-  @override
-  Future<Either<RepositoryExecption, Nil>> sheduleClient(
-      ({
-        int barbeariaId,
-        String clientName,
-        DateTime date,
-        int time,
-        int userId
-      }) scheduleData) {
-    // TODO: implement sheduleClient
-    throw UnimplementedError();
   }
 }
