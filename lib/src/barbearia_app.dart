@@ -31,7 +31,7 @@ class BarbeariaApp extends StatelessWidget {
             '/': (_) => const SplashPage(),
             '/auth/login': (_) => const LoginPage(),
             '/auth/register/user': (_) => const UserRegisterPage(),
-            '/auth/register/barebearia': (_) => const BarbeariaRegisterPage(),
+            '/auth/register/barbearia': (_) => const BarbeariaRegisterPage(),
             '/home/adm': (_) => const HomeAdmPage(),
             '/home/employee': (_) => const HomeEmployeePage(),
             '/employee/register': (_) => const EmployeeRegisterPage(),
